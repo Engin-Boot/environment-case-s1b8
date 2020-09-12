@@ -27,7 +27,11 @@
     <ClInclude Include="iConverter.h" />
     <ClInclude Include="iDispatcher.h" />
     <ClInclude Include="iReaderAndParser.h" />
+    <ClInclude Include="Sender.h" />
     <ClInclude Include="stringConverter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SenderMain.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
