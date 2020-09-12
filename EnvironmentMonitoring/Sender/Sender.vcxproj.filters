@@ -33,5 +33,11 @@
     <ClInclude Include="stringConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="consoleDispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iDispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
