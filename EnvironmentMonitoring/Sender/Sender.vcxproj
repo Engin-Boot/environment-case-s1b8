@@ -23,6 +23,7 @@
     <ClInclude Include="csvReaderAndParser.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="environmentParameter.h" />
+    <ClInclude Include="errorLogger.h" />
     <ClInclude Include="iConverter.h" />
     <ClInclude Include="iDispatcher.h" />
     <ClInclude Include="iReaderAndParser.h" />

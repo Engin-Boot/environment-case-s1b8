@@ -45,6 +45,7 @@
     <ClCompile Include="testConsoleDispatcher.cpp" />
     <ClCompile Include="testCsvReaderAndParser.cpp" />
     <ClCompile Include="testEnvironmentParameter.cpp" />
+    <ClCompile Include="testErrorLogger.cpp" />
     <ClCompile Include="testStringConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
