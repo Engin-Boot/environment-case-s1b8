@@ -43,6 +43,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="testCsvReaderAndParser.cpp" />
+    <ClCompile Include="testEnvironmentParameter.cpp" />
+    <ClCompile Include="testStringConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
