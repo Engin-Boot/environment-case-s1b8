@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="consoleDispatcher.h" />
     <ClInclude Include="csvReaderAndParser.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="environmentParameter.h" />
     <ClInclude Include="iConverter.h" />
+    <ClInclude Include="iDispatcher.h" />
     <ClInclude Include="iReaderAndParser.h" />
     <ClInclude Include="stringConverter.h" />
   </ItemGroup>
