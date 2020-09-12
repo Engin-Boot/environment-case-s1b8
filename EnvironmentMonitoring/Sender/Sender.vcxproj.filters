@@ -27,5 +27,11 @@
     <ClInclude Include="environmentParameter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="iConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
