@@ -12,7 +12,7 @@ public:
 	virtual string convert(vector<EnvironmentParameter>& v) override {
 		string result;
 		for (unsigned i = 0; i < v.size(); i++) {
-			result += v[i].toString() + "\n";
+			result += v[i].toString() + ";";
 		}
 		return result;
 	}

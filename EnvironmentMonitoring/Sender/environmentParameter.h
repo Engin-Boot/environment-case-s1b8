@@ -65,7 +65,7 @@ public:
 	}
 
 	std::string toString() {
-		std::string res = parameterName + " { CurrentValue: " + std::to_string(this->currentValue) + ", ErrorHighLimit: " + std::to_string(this->errorHighLimit) + ", ErrorLowLimit: " + std::to_string(this->errorLowLimit) + ", WarningHighLimit: " + std::to_string(this->warningHighLimit) + ", WarningLowLimit: " + std::to_string(this->warningLowLimit) + " } ";
+		std::string res = parameterName + "{CurrentValue:" + std::to_string(this->currentValue) + ",ErrorHighLimit:" + std::to_string(this->errorHighLimit) + ",ErrorLowLimit:" + std::to_string(this->errorLowLimit) + ",WarningHighLimit:" + std::to_string(this->warningHighLimit) + ",WarningLowLimit:" + std::to_string(this->warningLowLimit) + "}";
 		return res;
 	}
 
