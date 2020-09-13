@@ -69,10 +69,6 @@ public:
 			v.push_back(parseParam(inputParams[i]));
 		}
 
-		for (int i = 0; i < inputParams.size(); i++) {
-			cout << v[i].toString() << endl;
-		}
-
 		return v;
 	}
 };
