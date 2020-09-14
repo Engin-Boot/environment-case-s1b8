@@ -60,7 +60,7 @@ public:
 		return dataSourceFileName;
 	}
 
-	void setConfigFileName(string newConfigFileName) override
+	void setConfigFileName(const string& newConfigFileName) override
 	{
 		configFileName = newConfigFileName;
 	}
@@ -68,7 +68,7 @@ public:
 	{
 		vector<EnvironmentParameter> v;
 		fstream file;
-		string text, word;
+		string text;
 		vector<string> row;
 
 		file.open(dataSourceFileName, ios::in);
