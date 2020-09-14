@@ -15,7 +15,7 @@ private:
 	iReaderAndParser* iReaderAndParserObj;
 	iConverter* iConverterObj;
 	iDispatcher* iDispatcherObj;
-	errorLogger* errorLoggerObj;
+	errorLogger errorLoggerObj;
 
 	vector<EnvironmentParameter> ReadAndParseInfo() 
 	{	
@@ -27,8 +27,8 @@ private:
 		catch (errorList error)
 		{
 			switch (error) {
-			case no_data_found: errorLoggerObj->logError("No Data Found", "No Data source was found while trying to read"); break;
-			case missing_data: errorLoggerObj->logError("Missing Data", "One or more required parameters are missing while trying to parse"); break;
+			case no_data_found: errorLoggerObj.logError("No Data Found", "No Data source was found while trying to read"); break;
+			case missing_data: errorLoggerObj.logError("Missing Data", "One or more required parameters are missing while trying to parse"); break;
 			default: break;
 			}
 		}
@@ -36,7 +36,24 @@ private:
 	}
 
 public:
-	Sender(iReaderAndParser* irp, iConverter* ic, iDispatcher* id) : iReaderAndParserObj(irp), iConverterObj(ic), iDispatcherObj(id), errorLoggerObj(new(nothrow) errorLogger) {}
+	Sender(const Sender& ob) : iReaderAndParserObj(ob.iReaderAndParserObj), iConverterObj(ob.iConverterObj), iDispatcherObj(ob.iDispatcherObj), errorLoggerObj(ob.errorLoggerObj) {}
+	
+	Sender(iReaderAndParser* irp, iConverter* ic, iDispatcher* id) : iReaderAndParserObj(irp), iConverterObj(ic), iDispatcherObj(id) {}
+	
+	Sender& operator =(const Sender& ob) {
+		iReaderAndParserObj = ob.iReaderAndParserObj;
+		iConverterObj = ob.iConverterObj;
+		iDispatcherObj = ob.iDispatcherObj;
+		errorLoggerObj = ob.errorLoggerObj;
+		return *this;
+	}
+
+	~Sender() {
+		delete iReaderAndParserObj;
+		delete iConverterObj;
+		delete iDispatcherObj;
+	}
+
 	void sendInfoToReceiver() {
 		std::vector<EnvironmentParameter> paramObjects;
 		string result;

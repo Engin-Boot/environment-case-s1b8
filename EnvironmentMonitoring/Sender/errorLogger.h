@@ -12,11 +12,11 @@ using namespace std;
 class errorLogger
 {
 public:
-	static void writeToLogFile(ostream& ofs, string errorType, string message) {
+	static void writeToLogFile(ostream& ofs, const string& errorType, const string& message) {
 		ofs << errorType << ": " << message << "\n";
 	}
 
-	static void logError(string errorType, string message) {
+	static void logError(const string& errorType, const string& message) {
 		fstream logger("mylog.log", ios::out | ios::app);
 		if (logger) {
 			writeToLogFile(logger, errorType, message);

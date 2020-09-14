@@ -8,8 +8,8 @@ using namespace std;
 class iAlerter
 {
 public:
-    virtual void errorAlert(string paramName, float cv, float high, float low) = 0;
-    virtual void warningAlert(string paramName, float cv, float high, float low) = 0;
+    virtual void errorAlert(const string& paramName, float cv, float high, float low) = 0;
+    virtual void warningAlert(const string& paramName, float cv, float high, float low) = 0;
     
  };
 

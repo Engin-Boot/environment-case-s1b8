@@ -38,7 +38,7 @@ private:
 
 
 public:
-	EnvironmentParameter(std::string name, float value, float ehl, float ell, float whl, float wll) : parameterName(name), currentValue(value), errorHighLimit(ehl), errorLowLimit(ell), warningHighLimit(whl), warningLowLimit(wll) {}
+	EnvironmentParameter(const std::string& name, float value, float ehl, float ell, float whl, float wll) : parameterName(name), currentValue(value), errorHighLimit(ehl), errorLowLimit(ell), warningHighLimit(whl), warningLowLimit(wll) {}
 
 	std::string getParameterName() {
 		return this->parameterName;

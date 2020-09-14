@@ -7,12 +7,12 @@
 
 
 class DummyAlert : public iAlerter {
-	void errorAlert(string paramName, float cv, float high, float low)
+	void errorAlert(const string& paramName, float cv, float high, float low) override
 	{
 		cout << "This is dummy error alert with input parameters, " + paramName + " "+ to_string(cv) + " , "  + to_string(high) + " , " + to_string(low) << endl;
 			
 	}
-	void warningAlert(string paramName, float cv, float high, float low)
+	void warningAlert(const string& paramName, float cv, float high, float low) override
 	{
 		cout << "This is dummy warning alert with input parameters, " + paramName +" "+ to_string(cv) + " , " + to_string(high) + " , " + to_string(low) << endl;
 

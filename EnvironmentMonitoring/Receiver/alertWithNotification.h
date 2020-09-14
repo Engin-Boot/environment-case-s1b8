@@ -10,11 +10,11 @@ using namespace std;
 class alertWithNotification : public iAlerter
 {
 public:
-    virtual void errorAlert(string paramName, float currentValue , float errorHighLimit, float errorLowLimit)override
+    virtual void errorAlert(const string& paramName, float currentValue , float errorHighLimit, float errorLowLimit)override
     {
         cout << "ErrorNotification: The current " << paramName << " is " << to_string(currentValue) << ", but the sustainable range is " << to_string(errorLowLimit) << " - " << to_string(errorHighLimit) << endl;
     }
-    virtual void warningAlert(string paramName, float currentValue, float warningHighLimit, float warningLowLimit)override
+    virtual void warningAlert(const string& paramName, float currentValue, float warningHighLimit, float warningLowLimit)override
     {
         cout << "WarningNotification: The current " << paramName << " is " << to_string(currentValue) << ", but the sustainable range is " << to_string(warningLowLimit) << " - " << to_string(warningHighLimit) << endl;
     }

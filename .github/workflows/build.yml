@@ -1,0 +1,30 @@
+name: Build and Run
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.1
+      with:
+        vs-version: '[16.7,16.8)'
+
+    - name: MSBuild
+      working-directory: EnvironmentMonitoring
+      run: msbuild EnvironmentMonitoring.sln /p:OutDir="build_output"
+
+    - name: Testing Sender modules
+      working-directory: EnvironmentMonitoring
+      shell: cmd
+      run: SenderTest\build_output\SenderTest.exe
+    
+    - name: Testing Receiver modules
+      working-directory: EnvironmentMonitoring
+      shell: cmd
+      run: ReceiverTest\build_output\ReceiverTest.exe
+    

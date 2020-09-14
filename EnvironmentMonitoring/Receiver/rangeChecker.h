@@ -33,7 +33,7 @@ private:
 	}
 
 public:
-	rangeChecker(iAlerter* a) : alerter(a) {}
+	explicit rangeChecker(iAlerter* a) : alerter(a) {}
 	void checkForAlert(vector<EnvironmentParameter>params)
 	{
 		for (std::vector<EnvironmentParameter>::iterator it = params.begin(); it != params.end(); ++it)
