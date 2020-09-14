@@ -142,8 +142,12 @@
     <ClCompile Include="ReceiverMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="alertWithLight.h" />
+    <ClInclude Include="alertWithNotification.h" />
     <ClInclude Include="environmentParameter.h" />
+    <ClInclude Include="iAlerter.h" />
     <ClInclude Include="iInputParser.h" />
+    <ClInclude Include="rangeChecker.h" />
     <ClInclude Include="stringInputParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

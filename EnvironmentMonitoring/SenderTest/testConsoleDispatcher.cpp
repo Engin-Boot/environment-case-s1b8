@@ -20,6 +20,7 @@ TEST(ConsoleDispatcher, SendData) {
 	string callOutput = buffer.str();
 
 	delete consoleDispatcherObj;
+	cout.rdbuf(prevcoutbuf);
 
 	ASSERT_EQ(expectedString, callOutput);
 }
