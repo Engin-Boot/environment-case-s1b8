@@ -26,14 +26,14 @@ void fillSourceWithTempData(string fileName) {
 	file.open(fileName, ios::out);
 	if (file) {
 		file << "S.No,Temperature,TemperatureErrorHighLimit,TemperatureErrorLowLimit,TemperatureWarningHighLimit,TemperatureWarningLowLimit,Humidity(%),HumidityErrorHighLimit,HumiditiyErrorLowLimit,HumidityWarningHighLimit,HumidityWarningLowLimit\n";
-		file << "1,16.743954450909143,40,0,37,4,62,90,0,70,0\n";
+		file << "1,16.5,40,0,37,4,62,90,0,70,0\n";
 		file.close();
 	}
 }
 
 vector<EnvironmentParameter> generateExpectedVector() {
 	vector<EnvironmentParameter> v;
-	v.push_back(EnvironmentParameter("Temperature", 16.743954450909143, 40, 0, 37, 4));
+	v.push_back(EnvironmentParameter("Temperature", 16.5, 40, 0, 37, 4));
 	v.push_back(EnvironmentParameter("Humidity", 62, 90, 0, 70, 0));
 	return v;
 }

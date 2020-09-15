@@ -29,19 +29,19 @@
     <ClInclude Include="environmentParameter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rangeChecker.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="iAlerter.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Receiver.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="alertWithLight.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="alertWithNotification.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Receiver.h">
+    <ClInclude Include="iAlerter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rangeChecker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

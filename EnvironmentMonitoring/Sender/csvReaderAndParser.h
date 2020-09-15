@@ -55,7 +55,7 @@ private:
 				i++;
 			}
 		}
-		return i;
+		return i-1;
 	}
 
 public:
@@ -87,13 +87,14 @@ public:
 		vector<string> row;
 		srand((unsigned int)time(NULL));
 		int totalNoOfLines = coutNoOflines(dataSourceFileName);
-		int lineNumber = (rand() % totalNoOfLines),i=0;
-		
+		int lineNumber = (rand() % totalNoOfLines);
+
 		file.open(dataSourceFileName, ios::in);
 		if (file)
 		{
-			getline(file, text);
-			while (i<lineNumber) {
+			int i = 0;
+			getline(file, text); // headers
+			while (i<=lineNumber) {
 				getline(file, text);
 				row.clear();
 
