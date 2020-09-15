@@ -7,6 +7,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
+#include <ctime>
 
 #include "iReaderAndParser.h"
 #include "enums.h"
@@ -70,17 +72,21 @@ public:
 		fstream file;
 		string text;
 		vector<string> row;
-
+		srand((unsigned int)time(NULL));
+		int lineNumber = (rand() % 1000),i=0;
+		
 		file.open(dataSourceFileName, ios::in);
 		if (file)
 		{
 			getline(file, text);
-			while (getline(file, text)) {
+			while (i<lineNumber) {
+				getline(file, text);
 				row.clear();
 
 				stringstream s(text);
 
 				row = parseCsVLine(s);
+				i++;
 			}
 			v = checkAndPopulateVector(row);
 		}
