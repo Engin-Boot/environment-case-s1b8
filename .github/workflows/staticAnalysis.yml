@@ -17,9 +17,3 @@ jobs:
     - name: Limit complexity
       working-directory: EnvironmentMonitoring
       run: $HOME/.local/bin/lizard --CCN 3
-    
-    - name: install cppcheck static analysis
-      run: sudo apt-get update && sudo apt-get install -y cppcheck
-
-    - name: static analysis
-      run: cppcheck --enable=all --error-exitcode=1 .
