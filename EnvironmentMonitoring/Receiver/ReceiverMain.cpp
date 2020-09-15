@@ -13,5 +13,6 @@ int main()
 
 	Receiver receiverObj(stringInputparserObj,&rangeCheckerObj);
 	receiverObj.processReceivedDataAndCheckForAlert();
+
 	return 0;
 }

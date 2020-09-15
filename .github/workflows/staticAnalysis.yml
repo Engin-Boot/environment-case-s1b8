@@ -1,0 +1,52 @@
+name: Static analysis
+
+on: [push, pull_request]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install lizard
+      run: pip install lizard
+
+    - name: Limit complexity
+      working-directory: EnvironmentMonitoring
+      run: $HOME/.local/bin/lizard --CCN 3
+    
+    - name: install cppcheck static analysis
+      run: sudo apt-get update && sudo apt-get install -y cppcheck
+
+    - name: build Sender
+      working-directory: EnvironmentMonitoring\Sender
+      run: g++ -Wall -Wextra -Werror --coverage -o Sender *.cpp
+
+    - name: build Sender Test
+      working-directory: EnvironmentMonitoring\SenderTest
+      run: g++ -Wall -Wextra -Werror --coverage -o SenderTest *.cpp
+
+    - name: build Receiver
+      working-directory: EnvironmentMonitoring\Receiver
+      run: g++ -Wall -Wextra -Werror --coverage -o Receiver *.cpp
+
+    - name: build Receiver Test
+      working-directory: EnvironmentMonitoring\ReceiverTest
+      run: g++ -Wall -Wextra -Werror --coverage -o ReceiverTest *.cpp
+
+    - name: static analysis
+      run: cppcheck --enable=all --error-exitcode=1 .
+      
+    - name: run SenderTest
+      working-directory: EnvironmentMonitoring\SenderTest
+      run: ./SenderTest
+    
+    - name: run ReceiverTest
+      working-directory: EnvironmentMonitoring\ReceiverTest
+      run: ./ReceiverTest
+
+    - name: coverage report
+      run: gcov -r *.cpp
