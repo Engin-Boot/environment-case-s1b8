@@ -7,6 +7,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
+#include <ctime>
 
 #include "iReaderAndParser.h"
 #include "enums.h"
@@ -42,6 +44,19 @@ private:
 		}
 		return v;
 	}
+	int coutNoOflines(const string& fileName) {
+		fstream file;
+		file.open(fileName, ios::in);
+		int i = 0;
+		string content;
+		if (file)
+		{
+			while (getline(file, content)) {
+				i++;
+			}
+		}
+		return i;
+	}
 
 public:
 	void readAndSetFileName() override
@@ -70,17 +85,22 @@ public:
 		fstream file;
 		string text;
 		vector<string> row;
-
+		srand((unsigned int)time(NULL));
+		int totalNoOfLines = coutNoOflines(dataSourceFileName);
+		int lineNumber = (rand() % totalNoOfLines),i=0;
+		
 		file.open(dataSourceFileName, ios::in);
 		if (file)
 		{
 			getline(file, text);
-			while (getline(file, text)) {
+			while (i<lineNumber) {
+				getline(file, text);
 				row.clear();
 
 				stringstream s(text);
 
 				row = parseCsVLine(s);
+				i++;
 			}
 			v = checkAndPopulateVector(row);
 		}

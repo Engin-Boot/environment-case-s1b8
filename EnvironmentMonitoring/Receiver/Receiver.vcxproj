@@ -148,6 +148,7 @@
     <ClInclude Include="iAlerter.h" />
     <ClInclude Include="iInputParser.h" />
     <ClInclude Include="rangeChecker.h" />
+    <ClInclude Include="Receiver.h" />
     <ClInclude Include="stringInputParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
