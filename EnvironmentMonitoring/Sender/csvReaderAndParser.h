@@ -44,6 +44,19 @@ private:
 		}
 		return v;
 	}
+	int coutNoOflines(const string& fileName) {
+		fstream file;
+		file.open(fileName, ios::in);
+		int i = 0;
+		string content;
+		if (file)
+		{
+			while (getline(file, content)) {
+				i++;
+			}
+		}
+		return i;
+	}
 
 public:
 	void readAndSetFileName() override
@@ -73,7 +86,8 @@ public:
 		string text;
 		vector<string> row;
 		srand((unsigned int)time(NULL));
-		int lineNumber = (rand() % 1000),i=0;
+		int totalNoOfLines = coutNoOflines(dataSourceFileName);
+		int lineNumber = (rand() % totalNoOfLines),i=0;
 		
 		file.open(dataSourceFileName, ios::in);
 		if (file)
