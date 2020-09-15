@@ -30,7 +30,7 @@ private:
 			attributes.push_back(attribute);
 		}
 
-		for (int i = 0; i < attributes.size(); i++) {
+		for (unsigned int i = 0; i < attributes.size(); i++) {
 			values.push_back(stof(parseAttribute(attributes[i])));
 		}
 		return values;
@@ -65,7 +65,7 @@ public:
 			inputParams.push_back(param);
 		}
 		
-		for (int i = 0; i < inputParams.size(); i++) {
+		for (unsigned int i = 0; i < inputParams.size(); i++) {
 			v.push_back(parseParam(inputParams[i]));
 		}
 

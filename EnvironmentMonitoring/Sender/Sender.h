@@ -17,6 +17,14 @@ private:
 	iDispatcher* iDispatcherObj;
 	errorLogger errorLoggerObj;
 
+	void logCorrespondingError(errorList error) {
+		switch (error) {
+		case no_data_found: errorLoggerObj.logError("No Data Found", "No Data source was found while trying to read"); break;
+		case missing_data: errorLoggerObj.logError("Missing Data", "One or more required parameters are missing while trying to parse"); break;
+		default: break;
+		}
+	}
+
 	vector<EnvironmentParameter> ReadAndParseInfo() 
 	{	
 		vector<EnvironmentParameter> paramObjects;
@@ -26,11 +34,7 @@ private:
 		}
 		catch (errorList error)
 		{
-			switch (error) {
-			case no_data_found: errorLoggerObj.logError("No Data Found", "No Data source was found while trying to read"); break;
-			case missing_data: errorLoggerObj.logError("Missing Data", "One or more required parameters are missing while trying to parse"); break;
-			default: break;
-			}
+			logCorrespondingError(error);
 		}
 		return paramObjects;
 	}
